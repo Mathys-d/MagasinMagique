@@ -8,10 +8,72 @@ class MagasinTest {
 
     @Test
     void foo() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
+        Item[] items = new Item[] {
+                new Item("Kryptonite", 20, 20),
+                new Item("Pass VIP Concert", 20, 10),
+                new Item("Comté", 0, 15),
+                new Item("Pass VIP Concert", -1, 1),
+                new Item("Comté", 0, 15),
+                new Item("Kryptonite", 0, 20),
+                new Item("random", 0, 20),
+                new Item("Kryptonite", 20, 20),
+                new Item("Pass VIP Concert", 10, 10),
+                new Item("Comté", 20, 50),
+                new Item("Pass VIP Concert", -1, 1)
+        };
+
         Magasin app = new Magasin(items);
         app.updateQuality();
-        assertEquals("fixme", app.items[0].name);
+
+        assertEquals("Kryptonite", app.items[0].name);
+        assertEquals("Pass VIP Concert", app.items[1].name);
+        assertEquals("Comté", app.items[2].name);
+        assertEquals("Pass VIP Concert", app.items[3].name);
+        assertEquals("Comté", app.items[4].name);
+        assertEquals("Kryptonite", app.items[5].name);
+        assertEquals("random", app.items[6].name);
+        assertEquals("Kryptonite", app.items[7].name);
+        assertEquals("Pass VIP Concert", app.items[8].name);
+        assertEquals("Comté", app.items[9].name);
+        assertEquals("Pass VIP Concert", app.items[10].name);
+    }
+
+
+
+
+
+
+    @Test
+    void foo1() {
+
+        Item[] items = new Item[] {
+                new Item("Kryptonite", 20, 20),
+                new Item("Pass VIP Concert", 20, 10),
+                new Item("Comté", 0, 15),
+                new Item("Pass VIP Concert", -1, 1),
+                new Item("Comté", 0, 15),
+                new Item("Kryptonite", 0, 20),
+                new Item("random", 0, 20),
+                new Item("Kryptonite", 20, 20),
+                new Item("Pass VIP Concert", 10, 10),
+                new Item("Comté", 20, 50),
+                new Item("Pass VIP Concert", -1, 1)
+        };
+
+        Magasin2 app = new Magasin2(items);
+        app.updateQuality2();
+
+        assertEquals("Kryptonite", app.items[0].name);
+        assertEquals("Pass VIP Concert", app.items[1].name);
+        assertEquals("Comté", app.items[2].name);
+        assertEquals("Pass VIP Concert", app.items[3].name);
+        assertEquals("Comté", app.items[4].name);
+        assertEquals("Kryptonite", app.items[5].name);
+        assertEquals("random", app.items[6].name);
+        assertEquals("Kryptonite", app.items[7].name);
+        assertEquals("Pass VIP Concert", app.items[8].name);
+        assertEquals("Comté", app.items[9].name);
+        assertEquals("Pass VIP Concert", app.items[10].name);
     }
 
 }
