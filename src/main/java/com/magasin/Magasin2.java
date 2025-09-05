@@ -10,39 +10,42 @@ class Magasin2 {
     }
 
     public void updateQuality2() {
-        for (int i = 0; i < items.length; i++) {
+        for (Item item : items) {
 
-            if (items[i].quality >= 50 &&  !Objects.equals(items[i].name, "Kryptonite")) {
-                items[i].quality = 50;
+            if (item.quality >= 50 &&  !Objects.equals(item.name, "Kryptonite")) {
+                item.quality = 50;
             }
-            if  (items[i].sellIn <= 0 && !Objects.equals(items[i].name, "Kryptonite")) {
-                items[i].quality = items[i].quality- 1;
-            } items[i].quality = items[i].quality- 1 ;
-            items[i].sellIn = items[i].sellIn - 1 ;
+            if  (item.sellIn <= 0 && !Objects.equals(item.name, "Kryptonite")) {
+                item.quality = item.quality- 1;
+            } item.quality = item.quality- 1 ;
+            item.sellIn = item.sellIn - 1 ;
 
 
-            if (Objects.equals(items[i].name, "Kryptonite")){
-                items[i].quality = 80;
-                items[i].sellIn = items[i].sellIn + 1;
+            if (Objects.equals(item.name, "Pouvoirs magiques")) {
+                item.quality = item.quality - 1 ;
+            }
+            if (Objects.equals(item.name, "Kryptonite")){
+                item.quality = 80;
+                item.sellIn = item.sellIn + 1;
             }
 
-            if (Objects.equals(items[i].name, "Pass VIP Concert")) {
-                if (items[i].sellIn < 11) {
-                    items[i].quality = items[i].quality + 2;
-                    if (items[i].sellIn < 6) {
-                        items[i].quality = items[i].quality + 1;
-                        if (items[i].sellIn <= 0) {
-                            items[i].quality = 0;
+            if (Objects.equals(item.name, "Pass VIP Concert")) {
+                if (item.sellIn < 11) {
+                    item.quality = item.quality + 2;
+                    if (item.sellIn < 6) {
+                        item.quality = item.quality + 1;
+                        if (item.sellIn <= 0) {
+                            item.quality = 0;
                         }
                     }
                 }
             }
 
-            if (Objects.equals(items[i].name, "Comté")) {
-                items[i].quality = items[i].quality + 2;
+            if (Objects.equals(item.name, "Comté")) {
+                item.quality = item.quality + 2;
             }
-            if (items[i].quality <= 0) {
-                items[i].quality = 0;
+            if (item.quality <= 0) {
+                item.quality = 0;
             }
         }
     }
